@@ -15,16 +15,15 @@ import com.example.demo.repository.UserRepository;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserService {
-  
+ 
   @Autowired
   private UserRepository userRepository;
 
-  
+
   public List<User> searchAll() {
     return userRepository.findAll();
   }
 
-  
   public void create(UserRequest userRequest) {
     Date now = new Date();
     User user = new User();

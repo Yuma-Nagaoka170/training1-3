@@ -12,32 +12,32 @@ import jakarta.persistence.Table;
 
 import lombok.Data;
 
+
 @Entity
 @Data
-@Table(name="user")
-public class User implements Serializable{
+@Table(name = "user")
+public class User implements Serializable {
+ 
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  
+  @Column(name = "name")
+  private String name;
 
-	
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name="name")
-	private String name;
-	
-	@Column(name="address")
-	private String address;
-	
-	@Column(name = "phone")
-	private String phone;
-	
-	@Column(name = "update_date")
-	private Date updateDate;
-	
-	@Column(name = "create_date")
-	private Date createDate;
-	
-	@Column(name = "delete_date")
-	private Date deleteDate;
+  @Column(name = "address")
+  private String address;
+ 
+  @Column(name = "phone")
+  private String phone;
+ 
+  @Column(name = "update_date")
+  private Date updateDate;
+ 
+  @Column(name = "create_date")
+  private Date createDate;
+ 
+  @Column(name = "delete_date")
+  private Date deleteDate;
 }
